@@ -29,7 +29,7 @@ LIBS :=
 # directories
 INC_DIRS = .
 SRC_DIRS := . 
-OUT_DIR := ../out
+OUT_DIR := out
 #INC_DIRS_F = -I. $(patsubst %, -I%, $(INC_DIRS))
 
 # add traling / if not empty

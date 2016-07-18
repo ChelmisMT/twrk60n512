@@ -11,8 +11,8 @@
 #include"gpio.h"
 #include"uart.h"
 //#include"adc.h"
-#include "infrared.h"
-uint8_t byte=0x0;
+//#include "infrared.h"
+uint8_t byte=0x0; //8bit unsigned integer initialised to 0
 void delay(void);
 
 

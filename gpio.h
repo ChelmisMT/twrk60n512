@@ -40,7 +40,7 @@ void gpio_init(void)
 	PA->PCR[28].mux = 0x01;
 	PA->PCR[29].mux = 0x01;
 	//PTE8 and PTE9 as UART5
-	PE->PCR[8].mux = 0x0;	//clear default function
+	PE->PCR[8].mux = 0x0;	//clear default function because they are present to 1
 	PE->PCR[9].mux = 0x0;	//clear default function
 	PE->PCR[8].mux = 0x3;	//alt3 = UART5_TX
 	PE->PCR[9].mux = 0x3; 	//alt3 = UART5_RX
@@ -65,13 +65,12 @@ void gpio_init(void)
 
 /*
 	brief  Port A ISR Handler
- */
-void PORTA_IRQHandler(void)
+ void PORTA_IRQHandler(void)
 {
 	PA->ISFR.word_reg = 0xFFFFFFFF; //clear Interrupt Status Register by writing ones in all bits --- why???
 	toggle_LED2(); //toggle the second LED to indicate interrupt serviced
 	infraredsend(0xff);
-}
+}*/
 
 void display(uint8_t byte){
 	GPIOA->PDOR.word_reg = ~(uint32_t)((byte>>0&1)<<11 | (byte>>1&1)<<28 | (byte>>2&1)<<29 | (byte>>3&1)<<10);
