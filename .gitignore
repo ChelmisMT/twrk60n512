@@ -1,0 +1,20 @@
+#object files
+*.o
+
+#object 
+*~
+
+#irrelevant files
+infraredc
+infraredh
+my_uartc
+uartc
+uarth
+tests
+Hints
+mainc
+mainh
+genericsh
+gpioh
+.cproject
+.project
